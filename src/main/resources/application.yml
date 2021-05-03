@@ -1,4 +1,25 @@
 spring:
+  config:
+    activate:
+      on-profile: local
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgresql
+    username: postgresql
+    password: postgrespassword
+  jpa:
+    show-sql: true
+    hibernate:
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+      ddl-auto: update
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: prod
+
   datasource:
     url: jdbc:postgresql://10.140.0.5:5432/postgresql
     username: postgresql
